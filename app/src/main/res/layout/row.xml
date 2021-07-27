@@ -8,6 +8,7 @@
         android:id="@+id/tvTitleDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="3dp"
         android:text="TextView"
         android:textColor="@color/purple_200"
         android:textSize="24sp" />
@@ -21,6 +22,7 @@
             android:id="@+id/tvYearDisplay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="3dp"
             android:layout_weight="1"
             android:text="TextView"
             android:textSize="16sp" />
@@ -29,6 +31,7 @@
             android:id="@+id/tvRatingDisplay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="3dp"
             android:layout_weight="3"
             android:text="TextView"
             android:textColor="#FF0000"
@@ -39,7 +42,8 @@
         android:id="@+id/tvSingerDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="3dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
-        android:textSize="16sp" />
+        android:textSize="20sp" />
 </LinearLayout>
