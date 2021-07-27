@@ -20,6 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     Button btnToggle;
     Spinner spinner;
     ListView lv;
+    CustomAdapter aa;
 
 
     @Override
@@ -33,8 +34,12 @@ public class SecondActivity extends AppCompatActivity {
 
         spinnerData();
         ArrayList<Song> as = new ArrayList<Song>();
-        ArrayAdapter<Song> aa = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,as);
+//        ArrayAdapter<Song> aa = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,as);
+//        lv.setAdapter(aa);
+
+        aa = new CustomAdapter(this, R.layout.row, as);
         lv.setAdapter(aa);
+
 
         DBHelper dbh = new DBHelper(SecondActivity.this);
         as.clear();
@@ -50,7 +55,8 @@ public class SecondActivity extends AppCompatActivity {
                     btnToggle.setBackgroundColor(getResources().getColor(R.color.dodger));
                     DBHelper dbh = new DBHelper(SecondActivity.this);
                     ArrayList<Song> temp = new ArrayList<Song>();
-                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+//                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+                    CustomAdapter aatemp = new CustomAdapter(SecondActivity.this, R.layout.row, temp);
                     lv.setAdapter(aatemp);
                     temp.clear();
                     temp.addAll(dbh.getAllSongsByStar());
@@ -60,7 +66,8 @@ public class SecondActivity extends AppCompatActivity {
                     btnToggle.setBackgroundColor(getResources().getColor(R.color.grey));
                     DBHelper dbh = new DBHelper(SecondActivity.this);
                     ArrayList<Song> temp = new ArrayList<Song>();
-                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+//                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+                    CustomAdapter aatemp = new CustomAdapter(SecondActivity.this, R.layout.row, temp);
                     lv.setAdapter(aatemp);
                     temp.clear();
                     temp.addAll(dbh.getAllSongs());
@@ -87,7 +94,8 @@ public class SecondActivity extends AppCompatActivity {
                 if(position==0){
                     DBHelper dbh = new DBHelper(SecondActivity.this);
                     ArrayList<Song> temp = new ArrayList<Song>();
-                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+//                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1,temp);
+                    CustomAdapter aatemp = new CustomAdapter(SecondActivity.this, R.layout.row, temp);
                     lv.setAdapter(aatemp);
                     temp.clear();
                     temp.addAll(dbh.getAllSongs());
@@ -95,7 +103,8 @@ public class SecondActivity extends AppCompatActivity {
                 }else {
                     DBHelper dbh = new DBHelper(SecondActivity.this);
                     ArrayList<Song> temp = new ArrayList<Song>();
-                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1, temp);
+//                    ArrayAdapter<Song> aatemp = new ArrayAdapter<Song>(SecondActivity.this, android.R.layout.simple_list_item_1, temp);
+                    CustomAdapter aatemp = new CustomAdapter(SecondActivity.this, R.layout.row, temp);
                     lv.setAdapter(aatemp);
                     temp.clear();
                     temp.addAll(dbh.getAllSongsByYear(Integer.parseInt(spinner.getSelectedItem().toString())));
